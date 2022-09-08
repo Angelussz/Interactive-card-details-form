@@ -1,0 +1,86 @@
+@use 'variables';
+@use 'initial';
+.topcard{
+    background-image: url(./../images/bg-main-mobile.png);
+    background-size: cover;
+    height: 35vh;
+    font-size: small;
+    position: relative;
+}
+
+.backcard{
+    position: absolute;
+    
+    top: 20px;
+    right: 10px;
+    img{
+        width: 300px;
+        height: 150px;
+    }
+    &__code{
+        position: absolute;
+        top: 63px;
+            right: 30px;
+    }
+    
+}
+
+.frontcard{
+    position: absolute;
+    z-index: 10;
+    bottom: -40px;
+    left: 30px;
+    &__card{
+        width: 300px;
+        height: 150px;
+    }
+    &__logo{
+        position: absolute;
+        top: 10px;
+        left: 5px;
+        width: 50px;
+        height: 30px;
+    }
+    &__numbers{
+        position: absolute;
+        bottom: 50px;
+        left: 20px;
+    }
+    &__datas{
+        position: absolute;
+        width: 90%;
+        bottom: 20px;
+        left: 20px;
+        display: flex;
+        justify-content: space-between;
+        // background-color: red;
+    }
+}
+.formulario{
+    border: 1px solid red;
+    margin-top: 40px;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 30px;
+    
+    font-size: 14px;
+    input{
+        width: 80%;
+        height: 30px;
+        margin: 4px 0;
+    }
+    label{
+        margin: 4px 0;
+    }
+}
+
+.datecvc{
+    display: flex;
+    gap: 50px;
+    &__date{
+        input{
+            width: 60px;
+            
+        }
+    }
+}

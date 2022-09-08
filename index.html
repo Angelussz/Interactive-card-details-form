@@ -13,32 +13,46 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <main>
-  <div class="frontcard">
-
-    <p class="frontcard__numbers">
-      0000 0000 0000 0000
-    </p>
-    <div class="frontcard__datas">
-      <p>Jane Appleseed</p>
-      <p>00/00</p>
-    </div>  
+  <div class="topcard">
+    <div class="frontcard">
+      <img src="images/bg-card-front.png" alt="frontcard" class="frontcard__card">
+      <img src="images/card-logo.svg" alt="cardlogo" class="frontcard__logo">
+      <p class="frontcard__numbers">
+        0000 0000 0000 0000
+      </p>
+      <div class="frontcard__datas">
+        <p>Jane Appleseed</p>
+        <p>00/00</p>
+      </div>  
+    </div>
+    <div class="backcard">
+      <img src="images/bg-card-back.png" alt="backgroundcard">
+      <p class="backcard__code">000</p>
+    </div>
   </div>
-  <div class="backcard">
-    <p class="backcard__code">000</p>
-  </div>
-  <form action="#">
+  
+  <form action="#" class="formulario">
     <label for="GET-name">Cardholder Name</label>
     <input type="text" name="GET-name" id="name" placeholder="e.g. Jane Appleseed">
     <label for="GET-number">Card Number</label>
-    <input type="text"  name="GET-number">
-    
-    <input type="text" id="month" name="Date" placeholder="MM">
-    <input type="text" id="year" name="Date" placeholder="YY">
-    <label for="CVC">CVC</label>
-    <input type="text" id="cvc" name="CVC" placeholder="e.g. 123">
+    <input type="text"  name="GET-number" placeholder="0000 0000 0000 0000">
+    <div class="datecvc">
+      <div class="datecvc__date">
+        <label for="Date">Exp. Date (MM/YY)</label>
+        <br>
+        <input type="text" id="month" name="Date" placeholder="MM">
+        <input type="text" id="year" name="Date" placeholder="YY">
+      </div>
+      <div class="datecvc__cvc">
+        <label for="CVC">CVC</label> <br>
+        <input type="text" id="cvc" name="CVC" placeholder="e.g. 123">
+      </div>
+    </div>
+
     <input type="submit" id="submit" value="Confirm">
   </form>
 </main>
