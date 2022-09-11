@@ -25,7 +25,7 @@
         0000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0000
       </p>
       <div class="frontcard__datas">
-        <p>Jane Appleseed</p>
+        <p id="frontcardname">Jane Appleseed</p>
         <p>00/00</p>
       </div>  
     </div>
@@ -38,14 +38,15 @@
   <form action="#" class="formulario">
     <label for="GET-name">Cardholder Name</label>
     <input type="text" name="GET-name" id="name" placeholder="e.g. Jane Appleseed">
+    <p class="formulario__warning" id="namewarning"></p>
     <label for="GET-number">Card Number</label>
-    <input type="text"  name="GET-number" placeholder="0000 0000 0000 0000">
+    <input type="text"  name="GET-number" id="number" placeholder="0000 0000 0000 0000">
     <div class="datecvc">
       <div class="datecvc__date">
         <label for="Date">Exp. Date (MM/YY)</label>
         <br>
-        <input type="text" id="month" name="Date" placeholder="MM">
-        <input type="text" id="year" name="Date" placeholder="YY">
+        <input type="text" id="month" name="Date" placeholder="MM" maxlength="2" >
+        <input type="text" id="year" name="Date" placeholder="YY" maxlength="4">
       </div>
       <div class="datecvc__cvc">
         <label for="CVC">CVC</label> <br>
@@ -53,7 +54,7 @@
       </div>
     </div>
 
-    <button type="button" class="formulario__submit">Confirm</button>
+    <button type="button" class="formulario__submit" id="confirm">Confirm</button>
   </form>
 </main>
 
@@ -67,5 +68,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Angelo Perez</a>.
   </div>
+  <script src="main.js"></script>
 </body>
 </html>

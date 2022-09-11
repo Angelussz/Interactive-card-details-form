@@ -95,6 +95,7 @@ body {
 }
 
 .formulario {
+  border: 1px solid red;
   margin-top: 80px;
   display: flex;
   flex-flow: column nowrap;
@@ -113,6 +114,10 @@ body {
 .formulario label {
   margin-top: 8px;
   margin-left: 30px;
+}
+.formulario__warning {
+  margin-left: 30px;
+  color: hsl(0deg, 100%, 66%);
 }
 .formulario__submit {
   background-color: hsl(278deg, 68%, 11%);
