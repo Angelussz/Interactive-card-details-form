@@ -15,6 +15,10 @@ const formIsValid = {
     cvc: false,
 }
 
+
+const numcomp = /^[0-9]+$/
+
+
 names.addEventListener('change',(e)=>{
     if(e.target.value.trim().length > 0){
         frontname.textContent = e.target.value
@@ -23,6 +27,28 @@ names.addEventListener('change',(e)=>{
     }
     else{
         frontname.textContent = "Janet Applessed"
+        formIsValid.names = false
+        namewarning.textContent = "Can't Be blank"
+    }
+    console.log(e.target.value)
+})
+
+number.addEventListener('change',(e)=>{
+    if(e.target.value.trim().length > 0){
+        if (numcomp.test(e.target.value.trim())) {
+            frontname.textContent = e.target.value
+            formIsValid.names = true
+            namewarning.textContent=""
+        }
+        else{
+            frontname.textContent = "0000         0000         0000         0000"
+            formIsValid.names = false
+            namewarning.textContent = "Can't Be blank"
+        }
+        
+    }
+    else{
+        frontname.textContent = "0000         0000         0000         0000"
         formIsValid.names = false
         namewarning.textContent = "Can't Be blank"
     }
