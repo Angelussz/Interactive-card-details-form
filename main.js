@@ -7,6 +7,12 @@ const cvc = document.getElementById('cvc')
 const namewarning = document.getElementById('namewarning')
 
 const frontname= document.getElementById('frontcardname')
+
+const numberscard= document.getElementById('numberscard')
+const numberwarning= document.getElementById('numberwarning')
+
+
+
 const formIsValid = {
     names: false,
     number: false,
@@ -36,21 +42,22 @@ names.addEventListener('change',(e)=>{
 number.addEventListener('change',(e)=>{
     if(e.target.value.trim().length > 0){
         if (numcomp.test(e.target.value.trim())) {
-            frontname.textContent = e.target.value
+            numberscard.textContent = e.target.value
             formIsValid.names = true
-            namewarning.textContent=""
+            numberwarning.textContent=""
         }
+
         else{
-            frontname.textContent = "0000         0000         0000         0000"
+            numberscard.textContent = e.target.value
             formIsValid.names = false
-            namewarning.textContent = "Can't Be blank"
+            numberwarning.textContent = "User only numbers"
         }
         
     }
     else{
-        frontname.textContent = "0000         0000         0000         0000"
+        numberscard.textContent = "0000         0000         0000         0000"
         formIsValid.names = false
-        namewarning.textContent = "Can't Be blank"
+        numberwarning.textContent = "Can't Be blank"
     }
     console.log(e.target.value)
 })
