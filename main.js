@@ -59,7 +59,6 @@ number.addEventListener('change',(e)=>{
         formIsValid.names = false
         numberwarning.textContent = "Can't Be blank"
     }
-    console.log(e.target.value)
 })
 
 
