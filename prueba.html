@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asdsa</title>
+    <style>
+        input {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+input[name="accountnumber"] {
+    background: none;
+}
+    </style>
+</head>
+<body>
+    <input type="text" class="template" value="____.__._____" />
+<input type="text" id="accountnumber" name="accountnumber" placeholder="Located on your card" />
+<script>
+    var input = $("input[name='accountnumber']");
+input.on("keyup", function(e) {
+    var value = input.val();
+    // catching backspace
+    if(e.keyCode === 8) {
+        if(value.length == 4) {
+            input.val(value.substr(0, 3));
+        } else if(value.length == 7) {
+            input.val(value.substr(0, 6));
+        }
+    } else {
+        if(value.length == 4) {
+            input.val(value + ".");
+        } else if(value.length == 7) {
+            input.val(value + ".");
+        }
+    }
+})
+</script>
+</body>
+</html>

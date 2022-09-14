@@ -40,7 +40,7 @@ names.addEventListener('change',(e)=>{
 })
 
 number.addEventListener('change',(e)=>{
-    if(e.target.value.trim().length > 0){
+    if(e.target.value.trim().length === 16){
         if (numcomp.test(e.target.value.trim())) {
             numberscard.textContent = e.target.value
             formIsValid.names = true
@@ -55,11 +55,19 @@ number.addEventListener('change',(e)=>{
         
     }
     else{
-        numberscard.textContent = "0000         0000         0000         0000"
+        numberscard.textContent = "0000 \xa0\xa0\xa0\xa0 \xa0\xa0   0000 \xa0\xa0\xa0\xa0 \xa0\xa0 0000 \xa0\xa0\xa0\xa0 \xa0\xa0 0000"
         formIsValid.names = false
-        numberwarning.textContent = "Can't Be blank"
+        numberwarning.textContent = "Need eight numbers"
     }
 })
 
-
+number.addEventListener('keyup',(e)=>{
+    let b = e.target.value.replace(/ /g, "")
+    
+    if(e.target.value.trim().length>0 && b.length%4 == 0 && e.target.value.length< 19){
+        e.target.value += " "
+        
+    }
+    
+})
 
