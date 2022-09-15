@@ -3,6 +3,7 @@ const number = document.getElementById('number')
 const month = document.getElementById('month')
 const year = document.getElementById('year')
 const cvc = document.getElementById('cvc')
+const frontmy = document.getElementById('frontmy')
 // ---------------------------------
 const namewarning = document.getElementById('namewarning')
 
@@ -11,8 +12,11 @@ const frontname= document.getElementById('frontcardname')
 const numberscard= document.getElementById('numberscard')
 const numberwarning= document.getElementById('numberwarning')
 
+const mywarning = document.getAnimations('mywarning')
+// ---------------------
 
 
+// ----------
 const formIsValid = {
     names: false,
     number: false,
@@ -40,8 +44,9 @@ names.addEventListener('change',(e)=>{
 })
 
 number.addEventListener('change',(e)=>{
-    if(e.target.value.trim().length === 16){
-        if (numcomp.test(e.target.value.trim())) {
+    let numbervalid = e.target.value.trim().replace(/ /g, "")
+    if(numbervalid.length === 16){
+        if (numcomp.test(numbervalid)) {
             numberscard.textContent = e.target.value
             formIsValid.names = true
             numberwarning.textContent=""
@@ -63,11 +68,25 @@ number.addEventListener('change',(e)=>{
 
 number.addEventListener('keyup',(e)=>{
     let b = e.target.value.replace(/ /g, "")
-    
-    if(e.target.value.trim().length>0 && b.length%4 == 0 && e.target.value.length< 19){
+    if(e.target.value.trim().length>0 && b.length%4 == 0 && b.length<16){
         e.target.value += " "
-        
+        // console.log(b.length)
     }
-    
+    console.log(`2: ${b.length}`)
 })
 
+// Card Year and Month
+month.addEventListener('change',(e)=>{
+    if(e.target.value.trim().length > 0){
+        frontmy.textContent = e.target.value
+        formIsValid.month = true
+        namewarning.textContent=""
+    }
+    else{
+        frontmy.textContent = "00/00"
+        formIsValid.names = false
+        namewarning.textContent = "Can't Be blank"
+    }
+    // console.log(frontmy.textContent[0])
+    // console.log(e.target.value[0])
+})
