@@ -12,7 +12,7 @@ const frontname= document.getElementById('frontcardname')
 const numberscard= document.getElementById('numberscard')
 const numberwarning= document.getElementById('numberwarning')
 
-const mywarning = document.getAnimations('mywarning')
+const mywarning = document.getElementById('mywarning')
 // ---------------------
 
 
@@ -77,15 +77,39 @@ number.addEventListener('keyup',(e)=>{
 
 // Card Year and Month
 month.addEventListener('change',(e)=>{
-    if(e.target.value.trim().length > 0){
+    if(e.target.value.trim().length > 0 && year.value.length > 0){
         frontmy.textContent = e.target.value
         formIsValid.month = true
-        namewarning.textContent=""
+        formIsValid.year = true
+        mywarning.textContent=""
+        
     }
     else{
         frontmy.textContent = "00/00"
-        formIsValid.names = false
-        namewarning.textContent = "Can't Be blank"
+        formIsValid.month = false
+        formIsValid.year = false
+
+        mywarning.textContent = "Can't Be blank"
+    }
+    // console.log(frontmy.textContent[0])
+    // console.log(e.target.value[0])
+    
+})
+
+year.addEventListener('change',(e)=>{
+    if(e.target.value.trim().length > 0 && month.value.length > 0){
+        frontmy.textContent = e.target.value
+        formIsValid.month = true
+        formIsValid.year = true
+        mywarning.textContent=""
+
+    }
+    else{
+        frontmy.textContent = "00/00"
+        formIsValid.month = false
+        formIsValid.year = false
+
+        mywarning.textContent = "Can't Be blank"
     }
     // console.log(frontmy.textContent[0])
     // console.log(e.target.value[0])
