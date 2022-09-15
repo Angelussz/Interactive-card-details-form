@@ -4,6 +4,9 @@ const month = document.getElementById('month')
 const year = document.getElementById('year')
 const cvc = document.getElementById('cvc')
 const frontmy = document.getElementById('frontmy')
+
+const frontmo =document.getElementById('frontmo')
+const frontye =document.getElementById('frontye')
 // ---------------------------------
 const namewarning = document.getElementById('namewarning')
 
@@ -77,17 +80,16 @@ number.addEventListener('keyup',(e)=>{
 
 // Card Year and Month
 month.addEventListener('change',(e)=>{
-    if(e.target.value.trim().length > 0 && year.value.length > 0){
-        frontmy.textContent = e.target.value
+    if(e.target.value.trim().length > 0){
+        //frontmy.textContent = e.target.value
         formIsValid.month = true
-        formIsValid.year = true
+        
         mywarning.textContent=""
         
     }
     else{
-        frontmy.textContent = "00/00"
+        frontmo.textContent = "00"
         formIsValid.month = false
-        formIsValid.year = false
 
         mywarning.textContent = "Can't Be blank"
     }
@@ -97,20 +99,27 @@ month.addEventListener('change',(e)=>{
 })
 
 year.addEventListener('change',(e)=>{
-    if(e.target.value.trim().length > 0 && month.value.length > 0){
-        frontmy.textContent = e.target.value
-        formIsValid.month = true
+    if(e.target.value.trim().length > 0){
+        //frontmy.textContent = e.target.value
+        
         formIsValid.year = true
         mywarning.textContent=""
 
     }
     else{
-        frontmy.textContent = "00/00"
-        formIsValid.month = false
+        frontye.textContent = "00"
+        
         formIsValid.year = false
 
         mywarning.textContent = "Can't Be blank"
     }
-    // console.log(frontmy.textContent[0])
-    // console.log(e.target.value[0])
+    
+})
+
+month.addEventListener('keyup',(e)=>{
+    frontmo.textContent=e.target.value;  
+})
+
+year.addEventListener('keyup',(e)=>{
+    frontye.textContent=e.target.value;  
 })
