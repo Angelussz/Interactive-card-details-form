@@ -88,13 +88,13 @@ month.addEventListener('change',(e)=>{
         
     }
     else{
-        frontmo.textContent = "00"
+        
         formIsValid.month = false
 
         mywarning.textContent = "Can't Be blank"
     }
     // console.log(frontmy.textContent[0])
-    // console.log(e.target.value[0])
+    console.log(e.target.value[0])
     
 })
 
@@ -107,7 +107,7 @@ year.addEventListener('change',(e)=>{
 
     }
     else{
-        frontye.textContent = "00"
+        
         
         formIsValid.year = false
 
@@ -117,9 +117,24 @@ year.addEventListener('change',(e)=>{
 })
 
 month.addEventListener('keyup',(e)=>{
-    frontmo.textContent=e.target.value;  
+    frontmo.textContent=e.target.value;
+    console.log(e.target.value.length);
+    if (e.target.value.length ==0) {
+        frontmo.textContent="00";
+    }
 })
 
 year.addEventListener('keyup',(e)=>{
-    frontye.textContent=e.target.value;  
-})
+    frontye.textContent=e.target.value;
+    if (e.target.value.length ==0) {
+        frontye.textContent="00";
+    }})
+cvc.addEventListener('keyup',(e)=>{
+    const card_cvc = document.getElementById('cvc_back');
+    card_cvc.textContent=e.target.value;
+    console.log(e.target.value.length)
+    if (e.target.value.length ==0) {
+        card_cvc.textContent="000";
+    }
+}) //Agregar auxiliares
+

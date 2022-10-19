@@ -31,7 +31,7 @@
     </div>
     <div class="backcard">
       <img src="images/bg-card-back.png" alt="backgroundcard">
-      <p class="backcard__code">000</p>
+      <p class="backcard__code" id="cvc_back">000</p>
     </div>
   </div>
   
@@ -47,12 +47,12 @@
         <label for="Date">Exp. Date (MM/YY)</label>
         <br>
         <input type="text" id="month" name="Date" placeholder="MM" maxlength="2" >
-        <input type="text" id="year" name="Date" placeholder="YY" maxlength="4">
+        <input type="text" id="year" name="Date" placeholder="YY" maxlength="2">
         <p class="formulario__warning" id="mywarning"></p>
       </div>
       <div class="datecvc__cvc">
         <label for="CVC">CVC</label> <br>
-        <input type="text" id="cvc" name="CVC" placeholder="e.g. 123">
+        <input type="text" id="cvc" name="CVC" placeholder="e.g. 123" maxlength="3">
       </div>
     </div>
 
