@@ -51,20 +51,20 @@ number.addEventListener('change',(e)=>{
     if(numbervalid.length === 16){
         if (numcomp.test(numbervalid)) {
             numberscard.textContent = e.target.value
-            formIsValid.names = true
+            formIsValid.number = true
             numberwarning.textContent=""
         }
 
         else{
             numberscard.textContent = e.target.value
-            formIsValid.names = false
+            formIsValid.number = false
             numberwarning.textContent = "User only numbers"
         }
         
     }
     else{
         numberscard.textContent = "0000 \xa0\xa0\xa0\xa0 \xa0\xa0   0000 \xa0\xa0\xa0\xa0 \xa0\xa0 0000 \xa0\xa0\xa0\xa0 \xa0\xa0 0000"
-        formIsValid.names = false
+        formIsValid.number = false
         numberwarning.textContent = "Need eight numbers"
     }
 })
@@ -75,7 +75,7 @@ number.addEventListener('keyup',(e)=>{
         e.target.value += " "
         // console.log(b.length)
     }
-    console.log(`2: ${b.length}`)
+    //console.log(`2: ${b.length}`)
 })
 
 // Card Year and Month
@@ -133,8 +133,24 @@ cvc.addEventListener('keyup',(e)=>{
     const card_cvc = document.getElementById('cvc_back');
     card_cvc.textContent=e.target.value;
     console.log(e.target.value.length)
+    if(e.target.value.length == 3){
+        formIsValid.cvc = true;
+    }
     if (e.target.value.length ==0) {
         card_cvc.textContent="000";
     }
 }) //Agregar auxiliares
+
+const confirm = document.getElementById('confirm');
+confirm.addEventListener('click',(e)=>{
+    if (formIsValid.names == true &&
+    formIsValid.number == true &&
+    formIsValid.month == true &&
+    formIsValid.year == true &&
+    formIsValid.cvc == true){
+        const formulario = document.getElementById('formulario');
+        formulario.style.display = "none";
+    }   
+})
+
 

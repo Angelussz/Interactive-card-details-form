@@ -150,6 +150,25 @@ body {
 .datecvc__date label {
   margin: 0;
 }
+.datecvc__cvc input {
+  width: 140px;
+}
+
+.complete_space {
+  border: 1px solid red;
+  text-align: center;
+  margin-top: 100px;
+}
+.complete_space__img {
+  display: inline-block;
+}
+.complete_space__frase1 {
+  color: hsl(278deg, 68%, 11%);
+  font-size: 30px;
+}
+.complete_space__frase2 {
+  color: hsl(279deg, 6%, 55%);
+}
 
 @media (min-width: 1000px) {
   .attribution {
