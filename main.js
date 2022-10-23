@@ -141,16 +141,18 @@ cvc.addEventListener('keyup',(e)=>{
     }
 }) //Agregar auxiliares
 
-const confirm = document.getElementById('confirm');
-confirm.addEventListener('click',(e)=>{
+const confirmar = document.getElementById('confirm');
+const complete = document.getElementById('complete_space');
+confirmar.addEventListener('click',(e)=>{
+    const formulario = document.getElementById('formulario');
     if (formIsValid.names == true &&
     formIsValid.number == true &&
     formIsValid.month == true &&
     formIsValid.year == true &&
     formIsValid.cvc == true){
-        const formulario = document.getElementById('formulario');
-        formulario.style.display = "none";
-    }   
+        complete.classList.replace("disappear","appear")
+        formulario.classList.add("disappear")
+    }
 })
 
 

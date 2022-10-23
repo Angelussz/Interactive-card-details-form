@@ -158,6 +158,10 @@ body {
   border: 1px solid red;
   text-align: center;
   margin-top: 100px;
+  font-size: 14px;
+  max-width: 375px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .complete_space__img {
   display: inline-block;
@@ -168,6 +172,24 @@ body {
 }
 .complete_space__frase2 {
   color: hsl(279deg, 6%, 55%);
+}
+.complete_space input {
+  width: 80%;
+  height: 30px;
+  margin-top: 8px;
+  margin-left: 30px;
+  background-color: hsl(278deg, 68%, 11%);
+}
+.complete_space__submit {
+  margin: inherit;
+}
+
+.appear {
+  display: block;
+}
+
+.disappear {
+  display: none;
 }
 
 @media (min-width: 1000px) {
