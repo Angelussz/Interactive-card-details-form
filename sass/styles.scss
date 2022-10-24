@@ -80,7 +80,6 @@
     }
 }
 .formulario{
-    border: 1px solid red;
     margin-top: 80px;
     display: flex;
     flex-flow: column nowrap;
@@ -170,6 +169,10 @@
     }
     &__submit{
         margin: inherit;
+    }
+
+    @media (min-width:1000px) {
+        margin-left: max(683px,50%);  
     }
 }
 .appear{

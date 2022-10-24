@@ -95,7 +95,6 @@ body {
 }
 
 .formulario {
-  border: 1px solid red;
   margin-top: 80px;
   display: flex;
   flex-flow: column nowrap;
@@ -182,6 +181,11 @@ body {
 }
 .complete_space__submit {
   margin: inherit;
+}
+@media (min-width: 1000px) {
+  .complete_space {
+    margin-left: max(683px, 50%);
+  }
 }
 
 .appear {
